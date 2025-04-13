@@ -18,7 +18,7 @@ Este es un proyecto backend desarrollado con Node.js y Express, diseñado para m
 git clone https://github.com/luivasfer/proyecto-final.git
 ```
 
-2. cd nombre-del-proyecto
+2. cd proyecto-final
 ```bash
 npm install
 ```
