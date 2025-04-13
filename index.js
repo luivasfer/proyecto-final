@@ -7,7 +7,7 @@ const app = express();
 // Configurar CORS
 const allowedOrigins = [
   'http://localhost:5173', // Desarrollo local
-  'https://proyecto-final-front-6pbmhu9oz-luis-vs-projects-0d0ad7e1.vercel.app', // Dominio actual del frontend
+  'https://proyecto-final-front-wmdc.onrender.com/', // Dominio actual del frontend
   
 ];
 
