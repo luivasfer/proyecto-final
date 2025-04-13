@@ -11,7 +11,7 @@ Este es un proyecto backend desarrollado con Node.js y Express, diseñado para m
 - Validación de datos
 - Soporte para variables de entorno
 
-## 📁 Estructura del Proyecto
+
 
 1. Clona el repositorio:
 ```bash
