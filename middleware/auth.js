@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken');
-
-// Clave secreta para verificar el token (en producción, usa una variable de entorno)
-const JWT_SECRET = 'tu_clave_secreta_aqui';
+const JWT_SECRET =  process.env.JWT_SECRET;
 
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
