@@ -4,13 +4,29 @@ const { sequelize } = require('./models');
 const apiRoutes = require('./routes/api'); // Importar el enrutador principal
 
 const app = express();
+// Configurar CORS
+const allowedOrigins = [
+  'http://localhost:5173', // Desarrollo local
+  'https://proyecto-final-front-6pbmhu9oz-luis-vs-projects-0d0ad7e1.vercel.app', // Dominio actual del frontend
+  
+];
 
-// Configurar CORS globalmente
-app.use(cors({
-  origin: 'https://proyecto-final-front-6pbmhu9oz-luis-vs-projects-0d0ad7e1.vercel.app', // Solo permitir este origen
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Incluir OPTIONS para preflight
-  allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
-}));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Permitir peticiones sin origen (como Postman) o desde orígenes permitidos
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.error(`CORS bloqueado para el origen: ${origin}`);
+        callback(new Error(`No permitido por CORS: ${origin}`));
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // Soporte para cookies o autenticación (si es necesario)
+  })
+);
 
 app.use(express.json());
 
