@@ -6,7 +6,8 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 // Clave secreta para firmar el token (en producción, usa una variable de entorno)
-const JWT_SECRET = 'tu_clave_secreta_aqui';
+
+const JWT_SECRET =  process.env.JWT_SECRET;
 
 // Ruta para registrar un usuario
 router.post('/register', async (req, res) => {
