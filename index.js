@@ -7,7 +7,7 @@ const app = express();
 
 // Configurar CORS globalmente
 app.use(cors({
-  origin: 'http://localhost:5173', // Solo permitir este origen
+  origin: 'https://proyecto-final-front-kimp372qf-luis-vs-projects-0d0ad7e1.vercel.app/', // Solo permitir este origen
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Incluir OPTIONS para preflight
   allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
 }));
