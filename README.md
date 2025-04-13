@@ -30,5 +30,5 @@ JWT_SECRET=tu_clave_secreta
 
 4. Ejecuta 
 ```bash
-npm run dev
+node index.js
 ```
